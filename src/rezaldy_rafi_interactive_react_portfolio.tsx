@@ -1021,7 +1021,7 @@ const handleFormSubmit = async (e: React.FormEvent) => {
               </p>
             </div>
 
-            <div className="space-y-3 mb-8">
+            <div className="space-y-3 mb-6">
               <h4 className={`text-sm font-bold ${textPrimaryClasses}`}>
                 Key Highlights
               </h4>
@@ -1036,10 +1036,33 @@ const handleFormSubmit = async (e: React.FormEvent) => {
               ))}
             </div>
 
+            {/* PROJECT MEDIA EVIDENCE */}
+            {selectedProject.images && selectedProject.images.length > 0 && (
+              <div className="space-y-3 mb-8">
+                <h4 className={`text-sm font-bold ${textPrimaryClasses}`}>
+                  Project Evidence &amp; Screenshots
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {selectedProject.images.map((imgSrc, i) => (
+                    <div
+                      key={i}
+                      className="rounded-xl overflow-hidden border border-slate-700/50 bg-slate-950 group"
+                    >
+                      <img
+                        src={imgSrc}
+                        alt={`${selectedProject.title} screenshot ${i + 1}`}
+                        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <div className="flex justify-end">
               <button
                 onClick={() => setSelectedProject(null)}
-                className="px-5 py-2.5 rounded-xl bg-cyan-500 text-slate-950 font-bold text-xs"
+                className="px-5 py-2.5 rounded-xl bg-cyan-500 text-slate-950 font-bold text-xs hover:bg-cyan-400 transition-colors"
               >
                 Close Modal
               </button>
@@ -1047,7 +1070,6 @@ const handleFormSubmit = async (e: React.FormEvent) => {
           </div>
         </div>
       )}
-
       {/* EDUCATION & CERTIFICATIONS */}
       <section
         id="education"
