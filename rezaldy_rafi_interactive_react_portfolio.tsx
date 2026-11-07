@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { 
   User, 
   Briefcase, 
@@ -10,7 +10,6 @@ import {
   Mail, 
   Phone, 
   MapPin, 
-  Linkedin, 
   ArrowRight, 
   ExternalLink, 
   ChevronRight, 
@@ -28,16 +27,57 @@ import {
   Moon, 
   Menu, 
   X,
-  Filter,
-  Sparkles
+  Sparkles,
+  LucideIcon
 } from 'lucide-react';
+
+// Custom SVG Component for LinkedIn (Fixes lucide-react missing export issue)
+const LinkedinIcon = ({ className }: { className?: string }) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.72a1.49 1.49 0 1 0 0 2.97 1.49 1.49 0 0 0 0-2.97Z"/>
+  </svg>
+);
+
+// Type Definitions
+interface Project {
+  id: string;
+  title: string;
+  subtitle: string;
+  category: string;
+  icon: LucideIcon;
+  color: string;
+  description: string;
+  details: string;
+  tags: string[];
+  highlights: string[];
+}
+
+interface Skill {
+  name: string;
+  category: string;
+  level: string;
+  icon: LucideIcon;
+}
+
+interface Experience {
+  id: string;
+  company: string;
+  role: string;
+  type: string;
+  period: string;
+  category: string;
+  location: string;
+  description: string;
+  points: string[];
+  tags: string[];
+}
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('all');
   const [activeSkillCategory, setActiveSkillCategory] = useState('all');
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
 
@@ -58,7 +98,7 @@ export default function App() {
   const textMutedClasses = darkMode ? 'text-slate-400' : 'text-slate-500';
 
   // Experience Data with filter tags
-  const experiences = [
+  const experiences: Experience[] = [
     {
       id: 'accenture-sn',
       company: 'Accenture',
@@ -150,7 +190,7 @@ export default function App() {
     { id: 'qa', label: 'QA & Methodologies' }
   ];
 
-  const skillsList = [
+  const skillsList: Skill[] = [
     { name: 'ServiceNow ITSM', category: 'lowcode', level: 'Advanced', icon: Layers },
     { name: 'Pegasystems (Pega 23)', category: 'lowcode', level: 'Certified Architect', icon: Cpu },
     { name: 'OutSystems Platform', category: 'lowcode', level: 'Proficient', icon: Workflow },
@@ -169,7 +209,7 @@ export default function App() {
   ];
 
   // Featured Projects Data
-  const projects = [
+  const projects: Project[] = [
     {
       id: 'wbs',
       title: 'Enterprise Whistle Blowing System (WBS)',
@@ -216,7 +256,7 @@ export default function App() {
     ? skillsList
     : skillsList.filter(s => s.category === activeSkillCategory);
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFormSubmitted(true);
     setTimeout(() => {
@@ -355,7 +395,7 @@ export default function App() {
                 rel="noopener noreferrer" 
                 className={`px-6 py-4 rounded-xl border font-semibold transition-all duration-300 flex items-center gap-2 ${darkMode ? 'bg-slate-900 border-slate-800 hover:bg-slate-800 text-slate-200' : 'bg-white border-slate-200 hover:bg-slate-100 text-slate-800'}`}
               >
-                <Linkedin className="w-4 h-4 text-cyan-400" />
+                <LinkedinIcon className="w-4 h-4 text-cyan-400" />
                 <span>LinkedIn</span>
               </a>
             </div>
@@ -440,7 +480,7 @@ export default function App() {
 
       {/* SKILLS SECTION */}
       <section id="skills" className="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-12">
             <div className="inline-flex items-center gap-2 text-cyan-400 text-xs font-bold uppercase tracking-wider mb-2">
@@ -848,7 +888,7 @@ export default function App() {
 
                 <a href="https://www.linkedin.com/in/rezaldy-rafi-861950233/" target="_blank" rel="noopener noreferrer" className={`flex items-center gap-4 p-4 rounded-xl border transition-colors ${cardBgClasses}`}>
                   <div className="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
-                    <Linkedin className="w-5 h-5" />
+                    <LinkedinIcon className="w-5 h-5" />
                   </div>
                   <div>
                     <span className="text-xs text-slate-400 block">LinkedIn Profile</span>
@@ -901,7 +941,7 @@ export default function App() {
                   <div>
                     <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Message</label>
                     <textarea 
-                      rows="4" 
+                      rows={4}
                       required 
                       value={formData.message}
                       onChange={(e) => setFormData({...formData, message: e.target.value})}
