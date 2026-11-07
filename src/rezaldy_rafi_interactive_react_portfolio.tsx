@@ -79,6 +79,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState("all");
   const [activeSkillCategory, setActiveSkillCategory] = useState("all");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -315,30 +316,41 @@ export default function App() {
         "Black Box Tested",
       ],
     },
-      {
-      id: 'news-classification-ml',
-      title: 'News Article Topic Classification System',
-      subtitle: 'Machine Learning & NLP Web Integration',
-      category: 'AI / Machine Learning',
+    {
+      id: "news-classification-ml",
+      title: "News Article Topic Classification System",
+      subtitle: "Machine Learning & NLP Web Integration",
+      category: "AI / Machine Learning",
       icon: BrainCircuit,
-      color: 'from-emerald-500 to-teal-600',
-      description: 'An intelligent NLP web application that automatically classifies unstructured news text into 7 distinct topic categories using a Decision Tree model.',
-      details: 'Built a full end-to-end Machine Learning pipeline in Python featuring NLP preprocessing (Case Folding, Tokenizing, Filtering, Stemming) and TF-IDF feature extraction. The trained Decision Tree model achieves ~78% accuracy across 10,000+ test samples and is served via a Flask REST API endpoint connected to an interactive Laravel dashboard UI.',
-      tags: ['Python', 'Decision Tree', 'NLP', 'TF-IDF', 'Laravel', 'Flask', 'PHP', 'MySQL'],
+      color: "from-emerald-500 to-teal-600",
+      description:
+        "An intelligent NLP web application that automatically classifies unstructured news text into 7 distinct topic categories using a Decision Tree model.",
+      details:
+        "Built a full end-to-end Machine Learning pipeline in Python featuring NLP preprocessing (Case Folding, Tokenizing, Filtering, Stemming) and TF-IDF feature extraction. The trained Decision Tree model achieves ~78% accuracy across 10,000+ test samples and is served via a Flask REST API endpoint connected to an interactive Laravel dashboard UI.",
+      tags: [
+        "Python",
+        "Decision Tree",
+        "NLP",
+        "TF-IDF",
+        "Laravel",
+        "Flask",
+        "PHP",
+        "MySQL",
+      ],
       highlights: [
-        'NLP Preprocessing Pipeline (Case Folding, Tokenizing, Filtering, Stemming)',
-        'TF-IDF Feature Weighting & Scikit-Learn Decision Tree Model',
-        '78% Accuracy & Weighted F1-Score on 10,962 test samples',
-        'Flask API Endpoint integration with Laravel Web Dashboard'
+        "NLP Preprocessing Pipeline (Case Folding, Tokenizing, Filtering, Stemming)",
+        "TF-IDF Feature Weighting & Scikit-Learn Decision Tree Model",
+        "78% Accuracy & Weighted F1-Score on 10,962 test samples",
+        "Flask API Endpoint integration with Laravel Web Dashboard",
       ],
       images: [
-        '/projects/1.jpg',
-        '/projects/2.jpg',
-        '/projects/3.jpg',
-        '/projects/4.jpg',
-        '/projects/5.jpg',
-        '/projects/6.jpg'
-      ]
+        "/projects/1.jpg",
+        "/projects/2.jpg",
+        "/projects/3.jpg",
+        "/projects/4.jpg",
+        "/projects/5.jpg",
+        "/projects/6.jpg",
+      ],
     },
     {
       id: "tourism",
@@ -366,45 +378,47 @@ export default function App() {
       ? skillsList
       : skillsList.filter((s) => s.category === activeSkillCategory);
 
-// Make sure both submitStatus and setSubmitStatus are declared together:
-const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
-const [, setIsSubmitting] = useState(false);
+  // Make sure both submitStatus and setSubmitStatus are declared together:
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(
+    null,
+  );
+  const [, setIsSubmitting] = useState(false);
 
-const handleFormSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsSubmitting(true);
-  setSubmitStatus(null);
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
 
-  try {
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        access_key: "cf274ddc-7fe3-409b-8ae7-aca31d147f7c", // Ganti dengan Access Key dari Web3Forms
-        name: formData.name,
-        email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-      }),
-    });
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "cf274ddc-7fe3-409b-8ae7-aca31d147f7c", // Ganti dengan Access Key dari Web3Forms
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
 
-    const result = await response.json();
+      const result = await response.json();
 
-    if (result.success) {
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    } else {
-      setSubmitStatus('error');
+      if (result.success) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
     }
-  } catch {
-    setSubmitStatus('error');
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
 
   return (
     <div
@@ -1036,6 +1050,32 @@ const handleFormSubmit = async (e: React.FormEvent) => {
               ))}
             </div>
 
+            {/* FULLSCREEN IMAGE PREVIEW POPUP */}
+            {previewImage && (
+              <div
+                className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md"
+                onClick={() => setPreviewImage(null)}
+              >
+                <div className="relative max-w-5xl w-full max-h-[90vh] flex items-center justify-center">
+                  {/* Close Button */}
+                  <button
+                    onClick={() => setPreviewImage(null)}
+                    className="absolute -top-12 right-0 p-2 rounded-xl text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700 transition-colors"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
+
+                  {/* Clickable Fullsize Image */}
+                  <img
+                    src={previewImage}
+                    alt="Project screenshot preview"
+                    className="max-w-full max-h-[85vh] object-contain rounded-xl border border-slate-700/60 shadow-2xl"
+                    onClick={(e) => e.stopPropagation()} // Prevents closing modal when clicking the image itself
+                  />
+                </div>
+              </div>
+            )}
+
             {/* PROJECT MEDIA EVIDENCE */}
             {selectedProject.images && selectedProject.images.length > 0 && (
               <div className="space-y-3 mb-8">
@@ -1046,7 +1086,8 @@ const handleFormSubmit = async (e: React.FormEvent) => {
                   {selectedProject.images.map((imgSrc, i) => (
                     <div
                       key={i}
-                      className="rounded-xl overflow-hidden border border-slate-700/50 bg-slate-950 group"
+                      onClick={() => setPreviewImage(imgSrc)}
+                      className="rounded-xl overflow-hidden border border-slate-700/50 bg-slate-950 group cursor-pointer hover:border-cyan-500/50 transition-colors"
                     >
                       <img
                         src={imgSrc}
@@ -1344,17 +1385,19 @@ const handleFormSubmit = async (e: React.FormEvent) => {
                     <span>Send Message</span>
                   </button>
 
-                  {submitStatus === 'success' && (
-  <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
-    Thank you! Your message has been recorded. Direct email notification sent to rezaldy.rafi2@gmail.com.
-  </div>
-)}
+                  {submitStatus === "success" && (
+                    <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+                      Thank you! Your message has been recorded. Direct email
+                      notification sent to rezaldy.rafi2@gmail.com.
+                    </div>
+                  )}
 
-{submitStatus === 'error' && (
-  <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-semibold">
-    Failed to send message. Please try again or email directly to rezaldy.rafi2@gmail.com.
-  </div>
-)}
+                  {submitStatus === "error" && (
+                    <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-semibold">
+                      Failed to send message. Please try again or email directly
+                      to rezaldy.rafi2@gmail.com.
+                    </div>
+                  )}
                 </form>
               </div>
             </div>
