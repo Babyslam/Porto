@@ -50,6 +50,7 @@ interface Project {
   details: string;
   tags: string[];
   highlights: string[];
+  images?: string[];
 }
 
 interface Skill {
@@ -314,23 +315,30 @@ export default function App() {
         "Black Box Tested",
       ],
     },
-    {
-      id: "ml-news",
-      title: "Topic-Based News Classification System",
-      subtitle: "Machine Learning & Web Integration",
-      category: "AI / Machine Learning",
+      {
+      id: 'news-classification-ml',
+      title: 'News Article Topic Classification System',
+      subtitle: 'Machine Learning & NLP Web Integration',
+      category: 'AI / Machine Learning',
       icon: BrainCircuit,
-      color: "from-emerald-400 to-teal-600",
-      description:
-        "An intelligent NLP web application that automatically categorizes unstructured news articles into distinct topic domains.",
-      details:
-        "Trained a Decision Tree machine learning model in Python after natural language preprocessing (TF-IDF vectorization), then connected model endpoints to a Laravel frontend UI.",
-      tags: ["Python", "Decision Tree", "NLP", "Laravel", "MySQL"],
+      color: 'from-emerald-500 to-teal-600',
+      description: 'An intelligent NLP web application that automatically classifies unstructured news text into 7 distinct topic categories using a Decision Tree model.',
+      details: 'Built a full end-to-end Machine Learning pipeline in Python featuring NLP preprocessing (Case Folding, Tokenizing, Filtering, Stemming) and TF-IDF feature extraction. The trained Decision Tree model achieves ~78% accuracy across 10,000+ test samples and is served via a Flask REST API endpoint connected to an interactive Laravel dashboard UI.',
+      tags: ['Python', 'Decision Tree', 'NLP', 'TF-IDF', 'Laravel', 'Flask', 'PHP', 'MySQL'],
       highlights: [
-        "Decision Tree Algorithm",
-        "Natural Language Processing",
-        "Automated Categorization",
+        'NLP Preprocessing Pipeline (Case Folding, Tokenizing, Filtering, Stemming)',
+        'TF-IDF Feature Weighting & Scikit-Learn Decision Tree Model',
+        '78% Accuracy & Weighted F1-Score on 10,962 test samples',
+        'Flask API Endpoint integration with Laravel Web Dashboard'
       ],
+      images: [
+        '/projects/1.jpg',
+        '/projects/2.jpg',
+        '/projects/3.jpg',
+        '/projects/4.jpg',
+        '/projects/5.jpg',
+        '/projects/6.jpg'
+      ]
     },
     {
       id: "tourism",
