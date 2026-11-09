@@ -2053,7 +2053,6 @@ textarea {
   line-height: 1.4;
 }
 
-<<<<<<< HEAD
 /* Cashbook */
 
 .project-card--cashbook .project-card__visual {
@@ -2291,8 +2290,6 @@ textarea {
   font-weight: 500;
 }
 
-=======
->>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
 /* ---------- Experience ---------- */
 
 .experience {
@@ -3577,7 +3574,6 @@ a.contact-channel:hover {
   text-transform: uppercase;
 }
 
-<<<<<<< HEAD
 .case-source-links {
   display: flex;
   flex-direction: column;
@@ -3617,8 +3613,6 @@ a.contact-channel:hover {
   color: var(--muted-2);
 }
 
-=======
->>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
 .case-side__cta .button {
   min-height: 43px;
   margin-top: 0.65rem;
@@ -3665,13 +3659,10 @@ a.contact-channel:hover {
     transform 0.3s var(--ease);
 }
 
-<<<<<<< HEAD
 .case-gallery__item:only-child {
   grid-column: 1 / -1;
 }
 
-=======
->>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
 .case-gallery__item:hover {
   border-color: var(--accent-border);
   transform: translateY(-2px);
@@ -4154,7 +4145,6 @@ a.contact-channel:hover {
     padding: 1.35rem;
   }
 
-<<<<<<< HEAD
   .project-card--cashbook .project-card__visual {
     height: 320px;
     padding: 0.8rem;
@@ -4169,8 +4159,6 @@ a.contact-channel:hover {
     height: 278px;
   }
 
-=======
->>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
   .project-card__body,
   .project-card--horizon .project-card__body {
     padding: 1.25rem;
@@ -4478,7 +4466,6 @@ a.contact-channel:hover {
     padding: 1rem;
   }
 
-<<<<<<< HEAD
   .project-card--cashbook .project-card__visual {
     height: 285px;
     padding: 0.6rem;
@@ -4506,8 +4493,6 @@ a.contact-channel:hover {
     font-size: 0.36rem;
   }
 
-=======
->>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
   .viz-window,
   .portal,
   .tourism {
