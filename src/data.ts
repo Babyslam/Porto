@@ -1,0 +1,495 @@
+import {
+  Award,
+  BarChart3,
+  Code2,
+  Cpu,
+  Database,
+  GraduationCap,
+  Layers,
+  Network,
+  ShieldCheck,
+  Workflow,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+export type ProjectVisual = "classifier" | "portal" | "tourism";
+
+export interface ProjectMetric {
+  value: string;
+  label: string;
+}
+
+export interface ProjectImage {
+  src: string;
+  alt: string;
+  caption: string;
+}
+
+export interface Project {
+  id: string;
+  index: string;
+  title: string;
+  fullTitle: string;
+  category: string;
+  context: string;
+  summary: string;
+  tagline: string;
+  overview: string;
+  build: string[];
+  highlights: string[];
+  metrics: ProjectMetric[];
+  stack: string[];
+  images?: ProjectImage[];
+  visual: ProjectVisual;
+  accent: string;
+  layout: "wide" | "narrow" | "horizon";
+}
+
+export const profile = {
+  name: "Rezaldy Rafi",
+  shortName: "Rezaldy",
+  role: "Low-Code Analyst & Web Developer",
+  location: "Malang, East Java, Indonesia",
+  email: "rezaldy.rafi2@gmail.com",
+  phone: "+6281945794475",
+  phoneDisplay: "+62 819-457-94475",
+  linkedin:
+    "https://www.linkedin.com/in/rezaldy-rafi-861950233/",
+  linkedinDisplay: "linkedin.com/in/rezaldy-rafi",
+  summary:
+    "I translate complex business rules into resilient low-code architectures and secure web applications — then stay close to the work through testing, release, and production support.",
+};
+
+export const stats = [
+  { value: "3", label: "enterprise platforms in active delivery" },
+  { value: "78%", label: "ML model accuracy across 10,962 samples" },
+  { value: "3.43", label: "cumulative GPA / 4.00" },
+  { value: "2024", label: "Certified Pega System Architect '23" },
+];
+
+export const capabilities = [
+  {
+    title: "Low-code delivery",
+    description:
+      "Configuring enterprise workflows across ServiceNow ITSM, Pega 23, and OutSystems environments.",
+    icon: Layers,
+    accent: "lime",
+  },
+  {
+    title: "Full-stack engineering",
+    description:
+      "Building custom web products with Laravel, PHP, JavaScript, Python, and MySQL.",
+    icon: Code2,
+    accent: "mint",
+  },
+  {
+    title: "APIs & integration",
+    description:
+      "Mapping Swagger definitions, testing REST endpoints, and keeping data flows predictable.",
+    icon: Network,
+    accent: "sky",
+  },
+  {
+    title: "Quality & release",
+    description:
+      "Promoting across Dev, QAT, and UAT with black-box testing, code reviews, and unit checks.",
+    icon: ShieldCheck,
+    accent: "peach",
+  },
+];
+
+export const processSteps = [
+  {
+    number: "01",
+    title: "Understand",
+    text: "Clarify the business rule, the edge cases, and who carries the risk.",
+  },
+  {
+    number: "02",
+    title: "Shape",
+    text: "Map the workflow and data model before configuring the happy path.",
+  },
+  {
+    number: "03",
+    title: "Build",
+    text: "Configure, integrate, and document in small, reviewable increments.",
+  },
+  {
+    number: "04",
+    title: "Prove",
+    text: "Test across environments, then support the release after it ships.",
+  },
+];
+
+export const projects: Project[] = [
+  {
+    id: "wbs",
+    index: "01",
+    title: "Whistle Blowing System",
+    fullTitle: "Enterprise Whistle Blowing System",
+    category: "Enterprise web",
+    context: "Ministry of Communication & IT",
+    summary:
+      "A secure, anonymous reporting portal for civil servants to raise misconduct concerns without exposing their identity.",
+    tagline:
+      "Trust-first reporting, role-based review, and an admin surface built for accountability.",
+    overview:
+      "The system needed to let employees raise concerns without exposing their identity, while giving authorized administrators a clear path to review and act. I designed and built the portal end to end during my internship at Kominfo Malang.",
+    build: [
+      "Designed and constructed the official Whistle Blowing System website using Laravel, PHP, and MySQL.",
+      "Implemented role-based access control, multi-level approval workflows, and safeguards for reporter anonymity.",
+      "Built security-focused admin dashboards for reviewing reports and managing case progression.",
+      "Collaborated in an Agile team and ran black-box testing across modules to protect data integrity.",
+    ],
+    highlights: [
+      "Anonymous reporting protected by design",
+      "Role-based access and multi-level approvals",
+      "Black-box tested across core modules",
+    ],
+    metrics: [
+      { value: "100%", label: "anonymous reporting by design" },
+      { value: "RBAC", label: "role-based access control" },
+      { value: "Black box", label: "functional & security testing" },
+    ],
+    stack: ["Laravel", "PHP", "MySQL", "RBAC", "Black Box Testing"],
+    visual: "portal",
+    accent: "#c8f56a",
+    layout: "wide",
+  },
+  {
+    id: "classifier",
+    index: "02",
+    title: "News Topic Classifier",
+    fullTitle: "News Article Topic Classification System",
+    category: "Machine learning",
+    context: "NLP & web integration",
+    summary:
+      "An end-to-end NLP application that sorts unstructured news into seven topics, from data collection to a Laravel dashboard.",
+    tagline:
+      "A decision-tree pipeline wrapped in a Flask API and a dashboard people can actually use.",
+    overview:
+      "This project connected a full machine-learning pipeline to a working web interface. I handled the crawling, preprocessing, model training, API layer, and the dashboard used to submit and classify articles.",
+    build: [
+      "Collected and parsed article data with Python, BeautifulSoup, and CSV export tooling.",
+      "Built the NLP preprocessing pipeline: case folding, tokenizing, filtering, and stemming.",
+      "Trained and evaluated a TF-IDF + Scikit-Learn Decision Tree model across seven topic classes.",
+      "Served the saved model through a Flask REST endpoint and connected it to a Laravel dashboard.",
+    ],
+    highlights: [
+      "78% accuracy and weighted F1-score across 10,962 test samples",
+      "Seven-class NLP pipeline with repeatable preprocessing",
+      "Flask API integrated with a Laravel web dashboard",
+    ],
+    metrics: [
+      { value: "78%", label: "weighted accuracy / F1" },
+      { value: "10,962", label: "evaluation samples" },
+      { value: "7", label: "topic categories" },
+    ],
+    stack: ["Python", "Decision Tree", "NLP", "TF-IDF", "Flask", "Laravel"],
+    images: [
+      {
+        src: "/projects/1.jpg",
+        alt: "Python training script for the news topic classifier",
+        caption: "Model training with Scikit-Learn",
+      },
+      {
+        src: "/projects/2.jpg",
+        alt: "Article crawling and dataset preparation script",
+        caption: "Dataset collection with BeautifulSoup",
+      },
+      {
+        src: "/projects/3.jpg",
+        alt: "Classification report showing precision, recall, and F1 scores",
+        caption: "Evaluation across seven classes",
+      },
+      {
+        src: "/projects/4.jpg",
+        alt: "Flask API endpoint code loading the trained model",
+        caption: "Flask prediction endpoint",
+      },
+      {
+        src: "/projects/5.jpg",
+        alt: "Laravel dashboard for submitting news articles",
+        caption: "Dashboard input flow",
+      },
+      {
+        src: "/projects/6.jpg",
+        alt: "Article dataset table with predicted categories",
+        caption: "Classified article dataset",
+      },
+    ],
+    visual: "classifier",
+    accent: "#8fe7cc",
+    layout: "narrow",
+  },
+  {
+    id: "tourism",
+    index: "03",
+    title: "East Java Tourism Portal",
+    fullTitle: "East Java Tourism Information System",
+    category: "Web portal",
+    context: "Regional travel platform",
+    summary:
+      "A centralized tourism platform for discovering destinations, accommodations, and cultural guides across East Java.",
+    tagline:
+      "Spatial content, user reviews, and a CMS that keeps a regional travel guide current.",
+    overview:
+      "Designed as a single source of truth for regional travel information, the portal brings destinations, facilities, and local guides into one responsive experience with an admin-managed content layer.",
+    build: [
+      "Organized destination, accommodation, and guide content into a structured MySQL data model.",
+      "Built user review submissions and dynamic facility mapping for each destination.",
+      "Added an intuitive admin CMS so non-technical editors can keep listings current.",
+      "Implemented a responsive Tailwind interface for desktop and mobile visitors.",
+    ],
+    highlights: [
+      "Centralized content management for regional listings",
+      "Spatial data showcase for destinations and facilities",
+      "Responsive, mobile-first visitor experience",
+    ],
+    metrics: [
+      { value: "CMS", label: "centralized content workflow" },
+      { value: "3", label: "content pillars: places, stays, guides" },
+      { value: "Mobile", label: "responsive-first interface" },
+    ],
+    stack: ["Laravel", "PHP", "MySQL", "Tailwind CSS", "CMS"],
+    visual: "tourism",
+    accent: "#f1c5a8",
+    layout: "horizon",
+  },
+];
+
+export interface ExperienceTrack {
+  id: string;
+  label: string;
+  role: string;
+  summary: string;
+  points: string[];
+  tags: string[];
+}
+
+export interface ExperienceItem {
+  id: string;
+  period: string;
+  company: string;
+  role: string;
+  type: string;
+  location: string;
+  summary: string;
+  points: string[];
+  tags: string[];
+  tracks?: ExperienceTrack[];
+}
+
+export const experience: ExperienceItem[] = [
+  {
+    id: "accenture",
+    period: "Jan 2024 — Present",
+    company: "Accenture",
+    role: "Low-Code Development Analyst",
+    type: "Full-time",
+    location: "Enterprise projects · Indonesia",
+    summary:
+      "Delivering enhancements, integrations, and production fixes across three enterprise low-code platforms for public and health-services clients.",
+    points: [],
+    tags: ["ServiceNow", "Pega", "OutSystems", "Enterprise delivery"],
+    tracks: [
+      {
+        id: "servicenow",
+        label: "ServiceNow",
+        role: "ServiceNow Developer",
+        summary:
+          "Delivering ServiceNow ITSM enhancements, story execution, and production bug resolutions.",
+        points: [
+          "Delivered technical user stories and custom enhancement requests aligned with client specifications.",
+          "Investigated, debugged, and resolved production incident tickets to maintain strict SLA targets.",
+          "Managed code promotion and release pipelines from Development (Dev) to UAT environments.",
+          "Worked directly with clients and business analysts to clarify technical scope and ticket priorities.",
+        ],
+        tags: ["ITSM", "Incident Management", "Release Management", "Agile"],
+      },
+      {
+        id: "pega",
+        label: "Pega",
+        role: "Pegasystems Developer",
+        summary:
+          "Building case workflows, UI forms, and REST integrations on Pega Platform 23.",
+        points: [
+          "Read JSON definitions from Swagger specifications and tested APIs in Postman for data mapping.",
+          "Configured user interfaces, section rules, and field mappings across complex case pages.",
+          "Ran comprehensive testing in QAT environments and built reusable email correspondence templates.",
+        ],
+        tags: ["Pega Platform 23", "REST API", "Swagger", "Postman", "Case Management"],
+      },
+      {
+        id: "outsystems",
+        label: "OutSystems",
+        role: "OutSystems Developer",
+        summary:
+          "Developing application features, database patches, and live solution demonstrations.",
+        points: [
+          "Configured new features, fixed platform defects, and executed SQL data patching for remediation.",
+          "Ran unit testing protocols and presented live solution demos to business analysts.",
+          "Took part in peer code reviews, branch merging, and deployments to higher environments.",
+        ],
+        tags: ["OutSystems", "SQL Patching", "Unit Testing", "Code Reviews", "Demos"],
+      },
+    ],
+  },
+  {
+    id: "kominfo",
+    period: "Jul 2022 — Jan 2023",
+    company: "Ministry of Communication and IT RI",
+    role: "Web Developer Intern",
+    type: "Internship",
+    location: "Malang City Branch",
+    summary:
+      "Designed and engineered the ministry's official Whistle Blowing System from the ground up.",
+    points: [
+      "Built the WBS website with Laravel, PHP, and MySQL, including role-based access and approval flows.",
+      "Worked inside an Agile team to meet distribution schedules and sprint goals.",
+      "Ran black-box testing across system modules to protect data security and functional integrity.",
+    ],
+    tags: ["Laravel", "PHP", "MySQL", "Black Box Testing"],
+  },
+  {
+    id: "ub",
+    period: "Dec 2017 — Jun 2018",
+    company: "Faculty of Administrative Sciences, UB",
+    role: "Data Entry & IT Support",
+    type: "Internship",
+    location: "Brawijaya University",
+    summary:
+      "Maintained academic records and provisioned the hardware and network setup for exams.",
+    points: [
+      "Processed and consolidated student academic data, event logs, scholarships, and certifications.",
+      "Configured computer hardware, operating-system images, and localized network setups for exams.",
+    ],
+    tags: ["Data Entry", "IT Support", "Hardware Setup", "Networking"],
+  },
+];
+
+export interface SkillGroup {
+  id: string;
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  accent: string;
+  items: { name: string; level?: string }[];
+}
+
+export const skillGroups: SkillGroup[] = [
+  {
+    id: "platforms",
+    title: "Enterprise platforms",
+    description: "Where business rules become shipped workflows.",
+    icon: Layers,
+    accent: "lime",
+    items: [
+      { name: "ServiceNow ITSM", level: "Advanced" },
+      { name: "Pegasystems · Pega 23", level: "Certified Architect" },
+      { name: "OutSystems", level: "Proficient" },
+    ],
+  },
+  {
+    id: "engineering",
+    title: "Web engineering",
+    description: "Custom products when configuration is not enough.",
+    icon: Code2,
+    accent: "mint",
+    items: [
+      { name: "Laravel" },
+      { name: "PHP" },
+      { name: "JavaScript ES6+" },
+      { name: "Python / Flask" },
+      { name: "HTML5 / CSS3" },
+      { name: "Tailwind CSS" },
+    ],
+  },
+  {
+    id: "data",
+    title: "Data & integration",
+    description: "The glue that keeps systems honest.",
+    icon: Database,
+    accent: "sky",
+    items: [
+      { name: "REST APIs & JSON" },
+      { name: "Swagger / Postman" },
+      { name: "MySQL" },
+      { name: "SQL data patching" },
+      { name: "TF-IDF / Scikit-Learn" },
+    ],
+  },
+  {
+    id: "delivery",
+    title: "Delivery & quality",
+    description: "Getting it live, then keeping it healthy.",
+    icon: Workflow,
+    accent: "peach",
+    items: [
+      { name: "Agile / Scrum" },
+      { name: "Black-box testing" },
+      { name: "Release management" },
+      { name: "Code reviews" },
+      { name: "Environment promotion" },
+    ],
+  },
+];
+
+export const education = {
+  school: "State Polytechnic of Malang",
+  degree: "Bachelor of Applied Computer in Informatics Engineering",
+  period: "2019 — 2023",
+  gpa: "3.43 / 4.00",
+  icon: GraduationCap,
+};
+
+export const certifications = [
+  {
+    title: "Certified Pega System Architect '23",
+    issuer: "Pegasystems",
+    year: "2024",
+    description:
+      "Case management design, workflow rulesets, UI configuration, and enterprise data models.",
+    icon: Award,
+    featured: true,
+  },
+  {
+    title: "IT Support Google Specialization",
+    issuer: "Google · Coursera",
+    year: "2023",
+    description: "Systems, networking, and support fundamentals.",
+    icon: ShieldCheck,
+    featured: false,
+  },
+  {
+    title: "Networking Devices & Initial Configuration",
+    issuer: "Cisco",
+    year: "2023",
+    description: "Device setup and core network configuration.",
+    icon: Cpu,
+    featured: false,
+  },
+  {
+    title: "Data Visualization Best Practices",
+    issuer: "Google Sheets Specialization",
+    year: "2023",
+    description: "Clear, decision-ready data presentation.",
+    icon: BarChart3,
+    featured: false,
+  },
+];
+
+export const marqueeItems = [
+  "ServiceNow",
+  "Pegasystems",
+  "OutSystems",
+  "Laravel",
+  "Python",
+  "REST APIs",
+  "MySQL",
+  "Agile Delivery",
+  "Flask",
+  "JavaScript",
+  "Enterprise Systems",
+];
+
