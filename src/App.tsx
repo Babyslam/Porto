@@ -204,7 +204,6 @@ export function App() {
           </div>
         </div>
 
-        {/* Hero Stats */}
         <div className="container">
           <div className="hero__stats">
             {stats.map((st, i) => (
@@ -278,7 +277,6 @@ export function App() {
           </div>
         </div>
 
-        {/* Process */}
         <div className="container">
           <div className="process">
             <div className="process__intro">
