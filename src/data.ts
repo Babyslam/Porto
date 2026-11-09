@@ -12,7 +12,11 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
+<<<<<<< HEAD
 export type ProjectVisual = "classifier" | "portal" | "tourism" | "cashbook";
+=======
+export type ProjectVisual = "classifier" | "portal" | "tourism";
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
 
 export interface ProjectMetric {
   value: string;
@@ -32,7 +36,10 @@ export interface Project {
   fullTitle: string;
   category: string;
   context: string;
+<<<<<<< HEAD
   role: string;
+=======
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
   summary: string;
   tagline: string;
   overview: string;
@@ -40,7 +47,10 @@ export interface Project {
   highlights: string[];
   metrics: ProjectMetric[];
   stack: string[];
+<<<<<<< HEAD
   links?: { label: string; url: string }[];
+=======
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
   images?: ProjectImage[];
   visual: ProjectVisual;
   accent: string;
@@ -131,6 +141,7 @@ export const projects: Project[] = [
     fullTitle: "Enterprise Whistle Blowing System",
     category: "Enterprise web",
     context: "Ministry of Communication & IT",
+<<<<<<< HEAD
     role: "Full-stack developer · Team of 3",
     summary:
       "A role-controlled case-management portal that takes a complaint from verified intake through review, investigation, and delegation.",
@@ -169,6 +180,31 @@ export const projects: Project[] = [
         caption: "Public reporting landing page",
       },
     ],
+=======
+    summary:
+      "A secure, anonymous reporting portal for civil servants to raise misconduct concerns without exposing their identity.",
+    tagline:
+      "Trust-first reporting, role-based review, and an admin surface built for accountability.",
+    overview:
+      "The system needed to let employees raise concerns without exposing their identity, while giving authorized administrators a clear path to review and act. I designed and built the portal end to end during my internship at Kominfo Malang.",
+    build: [
+      "Designed and constructed the official Whistle Blowing System website using Laravel, PHP, and MySQL.",
+      "Implemented role-based access control, multi-level approval workflows, and safeguards for reporter anonymity.",
+      "Built security-focused admin dashboards for reviewing reports and managing case progression.",
+      "Collaborated in an Agile team and ran black-box testing across modules to protect data integrity.",
+    ],
+    highlights: [
+      "Anonymous reporting protected by design",
+      "Role-based access and multi-level approvals",
+      "Black-box tested across core modules",
+    ],
+    metrics: [
+      { value: "100%", label: "anonymous reporting by design" },
+      { value: "RBAC", label: "role-based access control" },
+      { value: "Black box", label: "functional & security testing" },
+    ],
+    stack: ["Laravel", "PHP", "MySQL", "RBAC", "Black Box Testing"],
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
     visual: "portal",
     accent: "#c8f56a",
     layout: "wide",
@@ -180,7 +216,10 @@ export const projects: Project[] = [
     fullTitle: "News Article Topic Classification System",
     category: "Machine learning",
     context: "NLP & web integration",
+<<<<<<< HEAD
     role: "ML pipeline & web integration",
+=======
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
     summary:
       "An end-to-end NLP application that sorts unstructured news into seven topics, from data collection to a Laravel dashboard.",
     tagline:
@@ -204,6 +243,7 @@ export const projects: Project[] = [
       { value: "7", label: "topic categories" },
     ],
     stack: ["Python", "Decision Tree", "NLP", "TF-IDF", "Flask", "Laravel"],
+<<<<<<< HEAD
     links: [
       {
         label: "Laravel dashboard on GitHub",
@@ -214,6 +254,8 @@ export const projects: Project[] = [
         url: "https://github.com/Babyslam/finpro_PCVK",
       },
     ],
+=======
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
     images: [
       {
         src: "/projects/1.jpg",
@@ -257,6 +299,7 @@ export const projects: Project[] = [
     fullTitle: "East Java Tourism Information System",
     category: "Web portal",
     context: "Regional travel platform",
+<<<<<<< HEAD
     role: "Full-stack developer · Team of 2",
     summary:
       "A regional tourism and booking system connecting destinations, hotels, customers, and admin-managed reservations across East Java.",
@@ -339,6 +382,34 @@ export const projects: Project[] = [
     visual: "cashbook",
     accent: "#9fc7f7",
     layout: "wide",
+=======
+    summary:
+      "A centralized tourism platform for discovering destinations, accommodations, and cultural guides across East Java.",
+    tagline:
+      "Spatial content, user reviews, and a CMS that keeps a regional travel guide current.",
+    overview:
+      "Designed as a single source of truth for regional travel information, the portal brings destinations, facilities, and local guides into one responsive experience with an admin-managed content layer.",
+    build: [
+      "Organized destination, accommodation, and guide content into a structured MySQL data model.",
+      "Built user review submissions and dynamic facility mapping for each destination.",
+      "Added an intuitive admin CMS so non-technical editors can keep listings current.",
+      "Implemented a responsive Tailwind interface for desktop and mobile visitors.",
+    ],
+    highlights: [
+      "Centralized content management for regional listings",
+      "Spatial data showcase for destinations and facilities",
+      "Responsive, mobile-first visitor experience",
+    ],
+    metrics: [
+      { value: "CMS", label: "centralized content workflow" },
+      { value: "3", label: "content pillars: places, stays, guides" },
+      { value: "Mobile", label: "responsive-first interface" },
+    ],
+    stack: ["Laravel", "PHP", "MySQL", "Tailwind CSS", "CMS"],
+    visual: "tourism",
+    accent: "#f1c5a8",
+    layout: "horizon",
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
   },
 ];
 
@@ -427,9 +498,15 @@ export const experience: ExperienceItem[] = [
     type: "Internship",
     location: "Malang City Branch",
     summary:
+<<<<<<< HEAD
       "Contributed to the ministry's Whistle Blowing System as part of a three-person Laravel team.",
     points: [
       "Built complaint intake, evidence uploads, and role-based case workflows with Laravel, PHP, and MySQL.",
+=======
+      "Designed and engineered the ministry's official Whistle Blowing System from the ground up.",
+    points: [
+      "Built the WBS website with Laravel, PHP, and MySQL, including role-based access and approval flows.",
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
       "Worked inside an Agile team to meet distribution schedules and sprint goals.",
       "Ran black-box testing across system modules to protect data security and functional integrity.",
     ],

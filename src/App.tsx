@@ -672,7 +672,11 @@ function App() {
                 </h2>
               </div>
               <div className="section-intro__aside">
+<<<<<<< HEAD
                 <span>04 case studies</span>
+=======
+                <span>03 case studies</span>
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
                 <p>
                   Chosen for depth, not volume. Open any card for the brief,
                   build decisions, and evidence.
@@ -683,7 +687,11 @@ function App() {
             <div className="project-grid">
               {projects.map((project, index) => (
                 <article
+<<<<<<< HEAD
                   className={`project-card project-card--${project.layout} project-card--${project.id}`}
+=======
+                  className={`project-card project-card--${project.layout}`}
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
                   key={project.id}
                   style={
                     {

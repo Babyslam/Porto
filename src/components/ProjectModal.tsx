@@ -6,7 +6,10 @@ import {
   Check,
   ChevronLeft,
   ChevronRight,
+<<<<<<< HEAD
   Code2,
+=======
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
   Mail,
   X,
 } from "lucide-react";
@@ -141,7 +144,11 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         <header className="case-head">
           <div className="case-head__meta">
             <span>{project.context}</span>
+<<<<<<< HEAD
             <span>{project.role}</span>
+=======
+            <span>{project.stack.slice(0, 3).join(" · ")}</span>
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
           </div>
           <h2 id="case-title">{project.fullTitle}</h2>
           <p>{project.summary}</p>
@@ -201,6 +208,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               </div>
             </div>
 
+<<<<<<< HEAD
             {project.links && project.links.length > 0 && (
               <div className="case-side__block">
                 <span className="case-label">Source</span>
@@ -221,6 +229,8 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               </div>
             )}
 
+=======
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
             <div className="case-side__cta">
               <span className="case-label">Have a similar problem?</span>
               <a className="button button--light button--full" href={mailto}>

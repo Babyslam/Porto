@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {
   ArrowDownLeft,
   ArrowUpRight,
@@ -8,6 +9,9 @@ import {
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
+=======
+import { Check, LockKeyhole, ShieldCheck, Sparkles } from "lucide-react";
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
 import type { ProjectVisual as VisualKind } from "../data";
 
 const classifierRows = [
@@ -76,7 +80,11 @@ function PortalVisual() {
             <LockKeyhole size={13} />
             WBS
           </span>
+<<<<<<< HEAD
           <span className="portal__anon">RESTRICTED</span>
+=======
+          <span className="portal__anon">ANONYMOUS</span>
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
         </div>
 
         <div className="portal__body">
@@ -87,7 +95,11 @@ function PortalVisual() {
           <h4>
             Report misconduct.
             <br />
+<<<<<<< HEAD
             Track every stage.
+=======
+            Stay protected.
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
           </h4>
           <div className="portal__fields">
             <span />
@@ -95,7 +107,11 @@ function PortalVisual() {
             <span className="portal__fields--short" />
           </div>
           <div className="portal__steps">
+<<<<<<< HEAD
             <span className="is-current">01 Intake</span>
+=======
+            <span className="is-current">01 Report</span>
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
             <span>02 Review</span>
             <span>03 Resolve</span>
           </div>
@@ -106,7 +122,11 @@ function PortalVisual() {
             <Check size={12} /> Access controlled
           </span>
           <span>
+<<<<<<< HEAD
             <Check size={12} /> Case tracked
+=======
+            <Check size={12} /> Identity protected
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
           </span>
         </div>
       </div>
@@ -117,7 +137,11 @@ function PortalVisual() {
       </div>
       <div className="viz-chip viz-chip--bottom">
         <span className="viz-chip__dot" />
+<<<<<<< HEAD
         <span>7-stage workflow</span>
+=======
+        <span>100% anonymous</span>
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
       </div>
     </div>
   );
@@ -151,18 +175,30 @@ function TourismVisual() {
           </span>
           <span className="tourism__pin tourism__pin--three">
             <i />
+<<<<<<< HEAD
             <span>Bookings</span>
+=======
+            <span>Guides</span>
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
           </span>
           <span className="tourism__map-label">EAST JAVA · ID</span>
         </div>
 
         <div className="tourism__panel">
+<<<<<<< HEAD
           <span className="tourism__panel-label">REGIONAL TRAVEL / 03</span>
+=======
+          <span className="tourism__panel-label">REGIONAL GUIDE / 03</span>
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
           <h4>One place for the whole journey.</h4>
           <div className="tourism__tags">
             <span>Explore</span>
             <span>Stay</span>
+<<<<<<< HEAD
             <span>Book</span>
+=======
+            <span>Guide</span>
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
           </div>
           <div className="tourism__line" />
           <span className="tourism__cms">Managed with a central CMS</span>
@@ -177,6 +213,7 @@ function TourismVisual() {
   );
 }
 
+<<<<<<< HEAD
 function CashbookVisual() {
   return (
     <div className="viz viz--cashbook">
@@ -273,5 +310,10 @@ export default function ProjectVisual({ kind }: { kind: VisualKind }) {
   if (kind === "classifier") return <ClassifierVisual />;
   if (kind === "portal") return <PortalVisual />;
   if (kind === "cashbook") return <CashbookVisual />;
+=======
+export default function ProjectVisual({ kind }: { kind: VisualKind }) {
+  if (kind === "classifier") return <ClassifierVisual />;
+  if (kind === "portal") return <PortalVisual />;
+>>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
   return <TourismVisual />;
 }
