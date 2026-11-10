@@ -672,7 +672,7 @@ function App() {
                 </h2>
               </div>
               <div className="section-intro__aside">
-                <span>04 case studies</span>
+                <span>03 case studies</span>
                 <p>
                   Chosen for depth, not volume. Open any card for the brief,
                   build decisions, and evidence.

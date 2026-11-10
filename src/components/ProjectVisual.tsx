@@ -1,10 +1,6 @@
 import {
-  ArrowDownLeft,
-  ArrowUpRight,
   Check,
-  ClipboardList,
   LockKeyhole,
-  Settings,
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
@@ -177,101 +173,8 @@ function TourismVisual() {
   );
 }
 
-function CashbookVisual() {
-  return (
-    <div className="viz viz--cashbook">
-      <div className="cashbook-stage">
-        <div className="cashbook-phone">
-          <span className="cashbook-phone__notch" aria-hidden="true" />
-          <div className="cashbook-phone__status">
-            <span>9:41</span>
-            <span>● ● ●</span>
-          </div>
-
-          <div className="cashbook-app">
-            <div className="cashbook-app__head">
-              <span>CashBook Nusantara</span>
-              <span className="cashbook-app__badge">LOCAL</span>
-            </div>
-
-            <h4>
-              Rangkuman
-              <br />
-              Bulan Ini
-            </h4>
-
-            <div className="cashbook-totals">
-              <span>
-                Pengeluaran
-                <strong>Rp 1.240.000</strong>
-              </span>
-              <span>
-                Pemasukan
-                <strong>Rp 3.800.000</strong>
-              </span>
-            </div>
-
-            <div className="cashbook-chart" aria-hidden="true">
-              {[34, 58, 46, 78, 55, 68, 43].map((height, index) => (
-                <i key={index} style={{ height: `${height}%` }} />
-              ))}
-            </div>
-
-            <div className="cashbook-grid" aria-hidden="true">
-              <span>
-                <ArrowDownLeft size={13} />
-                Masuk
-              </span>
-              <span>
-                <ArrowUpRight size={13} />
-                Keluar
-              </span>
-              <span>
-                <ClipboardList size={13} />
-                Detail
-              </span>
-              <span>
-                <Settings size={13} />
-                Atur
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div className="cashbook-side">
-          <span className="cashbook-side__label">MONTHLY SNAPSHOT</span>
-          <strong>+ Rp 2.560.000</strong>
-          <span className="cashbook-side__sub">net cash flow · demo data</span>
-          <div className="cashbook-side__rule" />
-          <div className="cashbook-side__row">
-            <span>Storage</span>
-            <strong>SQLite</strong>
-          </div>
-          <div className="cashbook-side__row">
-            <span>Backend</span>
-            <strong>None</strong>
-          </div>
-          <div className="cashbook-side__row">
-            <span>Chart</span>
-            <strong>fl_chart</strong>
-          </div>
-        </div>
-      </div>
-
-      <div className="viz-chip viz-chip--top">
-        <span className="viz-chip__dot" />
-        <span>Offline-first</span>
-      </div>
-      <div className="viz-chip viz-chip--bottom">
-        <span>Flutter · SQLite</span>
-      </div>
-    </div>
-  );
-}
-
 export default function ProjectVisual({ kind }: { kind: VisualKind }) {
   if (kind === "classifier") return <ClassifierVisual />;
   if (kind === "portal") return <PortalVisual />;
-  if (kind === "cashbook") return <CashbookVisual />;
   return <TourismVisual />;
 }

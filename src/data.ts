@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
-export type ProjectVisual = "classifier" | "portal" | "tourism" | "cashbook";
+export type ProjectVisual = "classifier" | "portal" | "tourism";
 
 export interface ProjectMetric {
   value: string;
@@ -164,9 +164,29 @@ export const projects: Project[] = [
     ],
     images: [
       {
-        src: "/projects/wbs-home.jpg",
-        alt: "Public landing page of the Malang Whistle Blowing System",
-        caption: "Public reporting landing page",
+        src: "/projects/wbs-1.jpg",
+        alt: "Whistle Blowing System project screenshot 1",
+        caption: "Whistle Blowing System — view 1",
+      },
+      {
+        src: "/projects/wbs-2.jpg",
+        alt: "Whistle Blowing System project screenshot 2",
+        caption: "Whistle Blowing System — view 2",
+      },
+      {
+        src: "/projects/wbs-3.jpg",
+        alt: "Whistle Blowing System project screenshot 3",
+        caption: "Whistle Blowing System — view 3",
+      },
+      {
+        src: "/projects/wbs-4.jpg",
+        alt: "Whistle Blowing System project screenshot 4",
+        caption: "Whistle Blowing System — view 4",
+      },
+      {
+        src: "/projects/wbs-5.jpg",
+        alt: "Whistle Blowing System project screenshot 5",
+        caption: "Whistle Blowing System — view 5",
       },
     ],
     visual: "portal",
@@ -216,34 +236,34 @@ export const projects: Project[] = [
     ],
     images: [
       {
-        src: "/projects/1.jpg",
-        alt: "Python training script for the news topic classifier",
-        caption: "Model training with Scikit-Learn",
+        src: "/projects/news-1.jpg",
+        alt: "News Topic Classifier project screenshot 1",
+        caption: "News Topic Classifier — view 1",
       },
       {
-        src: "/projects/2.jpg",
-        alt: "Article crawling and dataset preparation script",
-        caption: "Dataset collection with BeautifulSoup",
+        src: "/projects/news-2.jpg",
+        alt: "News Topic Classifier project screenshot 2",
+        caption: "News Topic Classifier — view 2",
       },
       {
-        src: "/projects/3.jpg",
-        alt: "Classification report showing precision, recall, and F1 scores",
-        caption: "Evaluation across seven classes",
+        src: "/projects/news-3.jpg",
+        alt: "News Topic Classifier project screenshot 3",
+        caption: "News Topic Classifier — view 3",
       },
       {
-        src: "/projects/4.jpg",
-        alt: "Flask API endpoint code loading the trained model",
-        caption: "Flask prediction endpoint",
+        src: "/projects/news-4.jpg",
+        alt: "News Topic Classifier project screenshot 4",
+        caption: "News Topic Classifier — view 4",
       },
       {
-        src: "/projects/5.jpg",
-        alt: "Laravel dashboard for submitting news articles",
-        caption: "Dashboard input flow",
+        src: "/projects/news-5.jpg",
+        alt: "News Topic Classifier project screenshot 5",
+        caption: "News Topic Classifier — view 5",
       },
       {
-        src: "/projects/6.jpg",
-        alt: "Article dataset table with predicted categories",
-        caption: "Classified article dataset",
+        src: "/projects/news-6.jpg",
+        alt: "News Topic Classifier project screenshot 6",
+        caption: "News Topic Classifier — view 6",
       },
     ],
     visual: "classifier",
@@ -290,55 +310,24 @@ export const projects: Project[] = [
     ],
     images: [
       {
-        src: "/projects/tourism-home.jpg",
-        alt: "Visitor landing page of the East Java Tourism Information System",
-        caption: "Visitor landing page",
+        src: "/projects/tourism-1.jpg",
+        alt: "East Java Tourism Information System project screenshot 1",
+        caption: "East Java Tourism — view 1",
+      },
+      {
+        src: "/projects/tourism-2.jpg",
+        alt: "East Java Tourism Information System project screenshot 2",
+        caption: "East Java Tourism — view 2",
+      },
+      {
+        src: "/projects/tourism-3.jpg",
+        alt: "East Java Tourism Information System project screenshot 3",
+        caption: "East Java Tourism — view 3",
       },
     ],
     visual: "tourism",
     accent: "#f2d3c0",
-    layout: "narrow",
-  },
-  {
-    id: "cashbook",
-    index: "04",
-    title: "Cashbook Nusantara",
-    fullTitle: "Cashbook Nusantara — Personal Finance App",
-    category: "Mobile app",
-    context: "Flutter · Local-first finance",
-    role: "Mobile app developer",
-    summary:
-      "A local-first personal finance app for recording income and expenses, with monthly summaries, charts, and on-device storage.",
-    tagline:
-      "A small, offline cash book that turns daily transactions into a clear monthly picture.",
-    overview:
-      "Built as a Flutter mobile app with SQLite storage. It gives a single user a login gate, fast income and expense entry, a monthly dashboard, transaction history, and settings for updating their password — with no backend dependency.",
-    build: [
-      "Built the login, monthly dashboard, income/expense entry, transaction detail, and settings screens in Flutter.",
-      "Modeled cash-flow records in SQLite and handled local CRUD with sqflite and path_provider.",
-      "Added date selection, Rupiah formatting, income and expense menus, monthly totals, and a cash-flow chart with fl_chart.",
-      "Packaged the app for Android and iOS with a consistent mobile visual system.",
-    ],
-    highlights: [
-      "Offline-first: no server or account sync required",
-      "Monthly income/expense summaries with a chart",
-      "Five complete app flows from login to settings",
-    ],
-    metrics: [
-      { value: "5", label: "core app screens" },
-      { value: "SQLite", label: "on-device persistence" },
-      { value: "Offline", label: "no backend dependency" },
-    ],
-    stack: ["Flutter", "Dart", "SQLite", "sqflite", "fl_chart", "intl"],
-    links: [
-      {
-        label: "cashbook_app on GitHub",
-        url: "https://github.com/Babyslam/cashbook_app",
-      },
-    ],
-    visual: "cashbook",
-    accent: "#9fc7f7",
-    layout: "wide",
+    layout: "horizon",
   },
 ];
 

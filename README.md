@@ -10,11 +10,10 @@ The site is built as a fast, single-page React application with an editorial vis
 
 - **Hero** — positioning, current role, platform focus, and headline metrics.
 - **About** — delivery philosophy, capabilities, and a four-step working process.
-- **Selected work** — four project case studies with custom product visuals:
+- **Selected work** — three project case studies with custom product visuals:
   - Enterprise Whistle Blowing System
   - News Article Topic Classification
   - East Java Tourism Information System
-  - Cashbook Nusantara
 - **Case-study modals** — overview, build details, outcomes, stack, and evidence gallery with keyboard-accessible lightbox.
 - **Experience** — Accenture role grouped into ServiceNow, Pega, and OutSystems tracks, plus earlier experience.
 - **Toolkit** — enterprise platforms, web engineering, data/integration, and delivery/quality.
