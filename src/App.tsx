@@ -423,8 +423,8 @@ function App() {
                 data-reveal
                 style={{ transitionDelay: "140ms" }}
               >
-                I&apos;m <strong>{profile.name}</strong> — a low-code analyst
-                and full-stack developer turning thorny enterprise rules into
+                I&apos;m <strong>{profile.name}</strong> — a low-code developer
+                turning thorny enterprise rules into
                 secure, human systems across{" "}
                 <span>ServiceNow</span>, <span>Pega</span>, and{" "}
                 <span>OutSystems</span>.
@@ -605,7 +605,7 @@ function App() {
                 <div className="about-facts">
                   <div>
                     <span>Currently</span>
-                    <strong>Accenture · Low-code delivery</strong>
+                    <strong>Accenture · Low-code developer</strong>
                   </div>
                   <div>
                     <span>Focus</span>

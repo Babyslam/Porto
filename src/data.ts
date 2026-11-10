@@ -49,8 +49,8 @@ export interface Project {
 
 export const profile = {
   name: "Rezaldy Rafi",
-  shortName: "Rezaldy",
-  role: "Low-Code Analyst & Web Developer",
+  shortName: "Reza",
+  role: "Low-Code Developer",
   location: "Malang, East Java, Indonesia",
   email: "rezaldy.rafi2@gmail.com",
   phone: "+6281945794475",
@@ -71,7 +71,7 @@ export const stats = [
 
 export const capabilities = [
   {
-    title: "Low-code delivery",
+    title: "Low-code Developer",
     description:
       "Configuring enterprise workflows across ServiceNow ITSM, Pega 23, and OutSystems environments.",
     icon: Layers,
