@@ -226,12 +226,8 @@ export const projects: Project[] = [
     stack: ["Python", "Decision Tree", "NLP", "TF-IDF", "Flask", "Laravel"],
     links: [
       {
-        label: "Laravel dashboard on GitHub",
+        label: "Laravel dashboard and Python notebook on GitHub",
         url: "https://github.com/Babyslam/news-classification",
-      },
-      {
-        label: "Python notebook on GitHub",
-        url: "https://github.com/Babyslam/finpro_PCVK",
       },
     ],
     images: [
