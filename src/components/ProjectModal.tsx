@@ -142,7 +142,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           <div className="case-head__meta">
             <span>{project.context}</span>
             <span>{project.role}</span>
-            <span>{project.stack.slice(0, 3).join(" · ")}</span>
           </div>
           <h2 id="case-title">{project.fullTitle}</h2>
           <p>{project.summary}</p>

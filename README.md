@@ -10,18 +10,11 @@ The site is built as a fast, single-page React application with an editorial vis
 
 - **Hero** — positioning, current role, platform focus, and headline metrics.
 - **About** — delivery philosophy, capabilities, and a four-step working process.
-<<<<<<< HEAD
 - **Selected work** — four project case studies with custom product visuals:
   - Enterprise Whistle Blowing System
   - News Article Topic Classification
   - East Java Tourism Information System
   - Cashbook Nusantara
-=======
-- **Selected work** — three project case studies with custom product visuals:
-  - Enterprise Whistle Blowing System
-  - News Article Topic Classification
-  - East Java Tourism Information System
->>>>>>> a3077494101343ee9a3003c2226e8331ede2ab77
 - **Case-study modals** — overview, build details, outcomes, stack, and evidence gallery with keyboard-accessible lightbox.
 - **Experience** — Accenture role grouped into ServiceNow, Pega, and OutSystems tracks, plus earlier experience.
 - **Toolkit** — enterprise platforms, web engineering, data/integration, and delivery/quality.
@@ -86,6 +79,22 @@ Most content lives in [`src/data.ts`](src/data.ts). Update the `profile`, `proje
 
 Project screenshots live in `public/projects/` and are referenced from the `images` array of a project.
 
+### Adding project screenshots (e.g. LinkedIn exports)
+
+1. Export the images from your LinkedIn **Projects** section (or save the image files).
+2. Drop them into `public/projects/`.
+3. In `src/data.ts`, add an entry to that project's `images` array:
+
+```ts
+{
+  src: "/projects/your-screenshot.jpg",
+  alt: "Short description of the image",
+  caption: "Caption shown in the lightbox",
+}
+```
+
+The gallery, lightbox, and accessibility labels are generated automatically.
+
 ## Themes and motion
 
 - Defaults to the visitor's system color scheme.
@@ -103,11 +112,17 @@ access_key: "YOUR_WEB3FORMS_ACCESS_KEY";
 
 Web3Forms access keys are intended to be used in client-side forms. If the request fails, the visitor is given a direct email fallback.
 
-## Deployment
+## Deploy to Vercel
 
-The site is a static Vite build, so it deploys to Vercel, Netlify, Cloudflare Pages, or any static host.
+The repo includes [`vercel.json`](vercel.json), so Vercel auto-detects the Vite framework.
 
-- Build command: `npm run build`
-- Output directory: `dist`
+1. Push this repository to GitHub.
+2. In Vercel, click **Add New → Project** and import the repository.
+3. Vercel reads these defaults automatically:
+   - Build command: `npm run build`
+   - Output directory: `dist`
+4. Click **Deploy**. No environment variables are required.
+
+The site is a plain static build, so it also deploys unchanged to Netlify, Cloudflare Pages, or any static host.
 
 For a GitHub Pages project site served from a subpath, set `base` in `vite.config.ts` (for example `base: "/Porto/"`) and make asset paths base-aware.
